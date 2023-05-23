@@ -22,18 +22,27 @@
             </li>
         </ul>
         <ul class="flex items-center">
+            <!-- if the user is sign in  -->
+            @auth
             <li>
                 <a href="#" class="p-3">Binod Ray</a>
             </li>
             <li>
-                <a href="#" class="p-3">Login</a>
+                <a href="#" class="p-3">logout</a>
+            </li>
+            @endauth
+
+            @guest
+            <!-- if the user is not sign in -->
+            <li>
+                <a href="{{route('login')}}" class="p-3">Login</a>
             </li>
             <li>
                 <a href="{{route('register')}}" class="p-3">Register</a>
             </li>
-            <li>
-                <a href="#" class="p-3">logout</a>
-            </li>
+            @endguest
+
+
         </ul>
     </nav>
 @yield('content')
